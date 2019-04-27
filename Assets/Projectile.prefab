@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7523278565935771375}
   - component: {fileID: 3539633873891402624}
   m_Layer: 0
-  m_Name: EnemyProjectile
+  m_Name: Projectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,3 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectilSpeed: 40
+  HitPrefab: {fileID: 4234966462237837425, guid: 408c3b51cf1f54248b73f481d628c2c0,
+    type: 3}

@@ -19,7 +19,7 @@ public class PowerConsumer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (recharger.Battery_2.CurrentPowerLevel > 0)
+        if (recharger.Battery_2.CurrentPowerLevel > 1)
         {
             recharger.Battery_2.GetComponent<BatteryPower>().AdjustPowerLevel(-PowerConsumptionRate * Time.deltaTime);
             if (!_poweredTriggered)

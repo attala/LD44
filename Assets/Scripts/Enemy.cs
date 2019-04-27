@@ -20,9 +20,11 @@ public class Enemy : MonoBehaviour
     private float _checkDestinationTimer = 0.0f;
     private float _coolDownTimer = 0.0f;
     private int _currentWaypoint = 0;
+    public Transform ShootPoint;
 
     void Awake()
     {
+
         _playerTransform = GameObject.Find("PlayerBattery").transform;
         agent = GetComponent<NavMeshAgent>();
         _patrolSpeed = agent.speed;
@@ -95,9 +97,9 @@ public class Enemy : MonoBehaviour
     {
         _canShoot = false;
         _coolDownTimer = 0.0f;
-        Vector3 dir = (_playerTransform.position - transform.position).normalized;
-        GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position, Quaternion.identity);
-        p.transform.rotation.SetLookRotation(dir, Vector3.up);
+        //Vector3 dir = (_playerTransform.position - transform.position).normalized;
+        GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, ShootPoint.position, Quaternion.identity);
+        p.transform.LookAt(_playerTransform.position + (Vector3.up *2));
     }
 
     void CheckForTargets()

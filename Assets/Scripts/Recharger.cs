@@ -66,7 +66,7 @@ public class Recharger : MonoBehaviour
 
             if (!_charging && Battery_1 != null && Battery_2 != null)
             {
-                if (Battery_2.CurrentPowerLevel < 100 && Battery_1.CurrentPowerLevel > 0)
+                if (Battery_2.CurrentPowerLevel < 100 && Battery_1.CurrentPowerLevel > 1)
                 {
                     _charging = true;
                     StartCoroutine("Charge");
@@ -93,13 +93,14 @@ public class Recharger : MonoBehaviour
         _chargingSound.clip = _originalChargeSound;
         _chargingSound.loop = true;
         _chargingSound.Play();
-            while (_charging && Battery_1.CurrentPowerLevel > 0 && Battery_2.CurrentPowerLevel < 100)
+
+            while (_charging && Battery_1.CurrentPowerLevel > 1 && Battery_2.CurrentPowerLevel < 100)
             {
                 _chargingSound.pitch = (Battery_2.CurrentPowerLevel / 100) + 0.3f;
                 Battery_2.AdjustPowerLevel(ChargingRate * Time.deltaTime);
                 Battery_1.AdjustPowerLevel(-ChargingRate * Time.deltaTime);
                 yield return false;
-           }
+            }
         _chargingSound.Stop();
         _chargingSound.loop = false;
         if(Battery_2.CurrentPowerLevel > 95)
