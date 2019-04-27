@@ -64,9 +64,12 @@
     <Compile Include="Assets\Scripts\BeltMovement.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
+    <Compile Include="Assets\Scripts\ExitDoor.cs" />
+    <Compile Include="Assets\Scripts\Lamp.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\PlayerBattery.cs" />
     <Compile Include="Assets\Scripts\PoolingManager.cs" />
+    <Compile Include="Assets\Scripts\PowerConsumer.cs" />
     <Compile Include="Assets\Scripts\Recharger.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/attal/Documents/GitHub/LD44/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

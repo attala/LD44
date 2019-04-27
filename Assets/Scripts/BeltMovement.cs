@@ -5,14 +5,24 @@ using UnityEngine;
 public class BeltMovement : MonoBehaviour
 {
     private List<Transform> _objectsOnBelt = new List<Transform>();
-    private bool _powered = true;
-    public float BeltSpeed = 10f;
-
+    private bool _powered = false;
+    private Renderer renderer;
+    private float _beltTexOffset = 0.0f;
+    public float BeltSpeed = 5f;
     public bool Powered { get => _powered; set => _powered = value; }
+    
+
+    private void Start()
+    {
+        renderer = GetComponent<Renderer>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        _objectsOnBelt.Add(other.transform);
+        if (other.tag == "ChargeAble")
+        {
+            _objectsOnBelt.Add(other.transform);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -39,6 +49,8 @@ public class BeltMovement : MonoBehaviour
     {
         if (Powered)
         {
+            float offset = Time.time * 1.95f;
+            renderer.material.mainTextureOffset = new Vector2(0, offset);
             for (int i = 0; i < _objectsOnBelt.Count; i++)
             {
                 _objectsOnBelt[i].Translate(transform.forward * BeltSpeed * Time.deltaTime);
