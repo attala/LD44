@@ -9,6 +9,7 @@ public class Recharger : MonoBehaviour
     public BatteryPower Battery_1;
     public BatteryPower Battery_2;
     public GameObject SparksAndSound;
+    public bool Battery2IsDraining = true;
 
     AudioSource _chargingSound;
     AudioClip _originalChargeSound;
@@ -71,6 +72,18 @@ public class Recharger : MonoBehaviour
                     StartCoroutine("Charge");
                 }
             }
+        }
+        if (_charging)
+        {
+            if (Battery2IsDraining)
+            {
+                Battery_2.transform.position = Vector3.Lerp(Battery_2.transform.position, transform.position, Time.deltaTime);
+            }
+            else
+            {
+                Battery_1.transform.position = Vector3.Lerp(Battery_1.transform.position, transform.position, Time.deltaTime);
+            }
+            
         }
     }
 

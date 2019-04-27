@@ -19,28 +19,28 @@ public class BatteryPower : MonoBehaviour
     public void AdjustPowerLevel(float amount)
     {
         _currentPowerLevel += amount;
-        SetPLCpositionAndColor();
+        SetPLCsizeAndColor();
     }
 
     public void SetPowerLevel(float amount)
     {
         _currentPowerLevel = amount;
-        SetPLCpositionAndColor();
+        SetPLCsizeAndColor();
     }
 
-    void SetPLCpositionAndColor()
+    void SetPLCsizeAndColor()
     {
-        Vector3 newPosition = new Vector3(0, Mathf.Lerp(-2.44f, 0, CurrentPowerLevel / 100f), 0);
-        PowerLevelCylinder.localPosition = newPosition;
+        PowerLevelCylinder.localScale = new Vector3(PowerLevelCylinder.localScale.x, Mathf.Clamp(Mathf.Lerp(0, 1.477968f, CurrentPowerLevel / 100f), 0.01f, 1.475f), PowerLevelCylinder.localScale.z);
+
         if (_currentPowerLevel > 50)
         {
-            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
-            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
+            PowerLevelCylinder.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
+            PowerLevelCylinder.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
         }   
         else
         {
-            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
-            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
+            PowerLevelCylinder.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
+            PowerLevelCylinder.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
         }    
     }
 }
