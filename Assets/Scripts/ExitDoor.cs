@@ -28,8 +28,12 @@ public class ExitDoor : MonoBehaviour
             transform.Translate(Vector3.up * MoveSpeed * Time.deltaTime);
             if(transform.position.y > 10f)
             {
-                lamp.Switch(true);
-                GetComponent<BoxCollider>().enabled = false;
+                if (!lamp.On)
+                {
+                    GetComponent<AudioSource>().Play();
+                    lamp.Switch(true);
+                    GetComponent<BoxCollider>().enabled = false;
+                }
             }
         }
     }

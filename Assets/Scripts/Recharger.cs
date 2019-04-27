@@ -8,9 +8,20 @@ public class Recharger : MonoBehaviour
     public float ChargingRate = 10;
     public BatteryPower Battery_1;
     public BatteryPower Battery_2;
+    public GameObject SparksAndSound;
 
+    AudioSource _chargingSound;
+    AudioClip _originalChargeSound;
+    public AudioClip FinishedChargeSound, FinishedChargeNot100PercentSound;
     bool _charging = false;
     float _checkIfAbleToChargeTimer = 0.0f;
+
+    private void Start()
+    {
+        SparksAndSound.SetActive(false);
+        _chargingSound = GetComponent<AudioSource>();
+        _originalChargeSound = _chargingSound.clip;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -65,15 +76,30 @@ public class Recharger : MonoBehaviour
 
     IEnumerator Charge()
     {
-
+        SparksAndSound.SetActive(true);
+        _chargingSound.clip = _originalChargeSound;
+        _chargingSound.loop = true;
+        _chargingSound.Play();
             while (_charging && Battery_1.CurrentPowerLevel > 0 && Battery_2.CurrentPowerLevel < 100)
             {
+                _chargingSound.pitch = (Battery_2.CurrentPowerLevel / 100) + 0.3f;
                 Battery_2.AdjustPowerLevel(ChargingRate * Time.deltaTime);
                 Battery_1.AdjustPowerLevel(-ChargingRate * Time.deltaTime);
                 yield return false;
            }
-
+        _chargingSound.Stop();
+        _chargingSound.loop = false;
+        if(Battery_2.CurrentPowerLevel > 95)
+        {
+            _chargingSound.clip = FinishedChargeSound;
+        }
+        else
+        {
+            _chargingSound.clip = FinishedChargeNot100PercentSound;
+        }
+        _chargingSound.Play();
         _charging = false;
+        SparksAndSound.SetActive(false);
         yield return true;
     }
 }

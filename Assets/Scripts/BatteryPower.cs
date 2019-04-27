@@ -18,13 +18,13 @@ public class BatteryPower : MonoBehaviour
 
     public void AdjustPowerLevel(float amount)
     {
-        CurrentPowerLevel += amount;
+        _currentPowerLevel += amount;
         SetPLCpositionAndColor();
     }
 
     public void SetPowerLevel(float amount)
     {
-        CurrentPowerLevel = amount;
+        _currentPowerLevel = amount;
         SetPLCpositionAndColor();
     }
 
@@ -32,9 +32,15 @@ public class BatteryPower : MonoBehaviour
     {
         Vector3 newPosition = new Vector3(0, Mathf.Lerp(-2.44f, 0, CurrentPowerLevel / 100f), 0);
         PowerLevelCylinder.localPosition = newPosition;
-        if (CurrentPowerLevel > 50)
-            PowerLevelCylinder.GetComponent<Renderer>().material.color = Color.Lerp(Color.yellow, Color.green, (CurrentPowerLevel - 50f) / 100f);
+        if (_currentPowerLevel > 50)
+        {
+            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
+            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.yellow, Color.green, (_currentPowerLevel - 50f) / 100f));
+        }   
         else
-            PowerLevelCylinder.GetComponent<Renderer>().material.color = Color.Lerp(Color.red, Color.yellow, CurrentPowerLevel / 50f);
+        {
+            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_Color", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
+            PowerLevelCylinder.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.red, Color.yellow, _currentPowerLevel / 50f));
+        }    
     }
 }

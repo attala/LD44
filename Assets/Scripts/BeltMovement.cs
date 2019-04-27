@@ -8,6 +8,8 @@ public class BeltMovement : MonoBehaviour
     private bool _powered = false;
     private Renderer renderer;
     private float _beltTexOffset = 0.0f;
+    private AudioSource _beltSound;
+
     public float BeltSpeed = 5f;
     public bool Powered { get => _powered; set => _powered = value; }
     
@@ -15,6 +17,7 @@ public class BeltMovement : MonoBehaviour
     private void Start()
     {
         renderer = GetComponent<Renderer>();
+        _beltSound = transform.root.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,11 +52,22 @@ public class BeltMovement : MonoBehaviour
     {
         if (Powered)
         {
+            if (!_beltSound.isPlaying)
+            {
+                _beltSound.Play();
+            }
             float offset = Time.time * 1.95f;
             renderer.material.mainTextureOffset = new Vector2(0, offset);
             for (int i = 0; i < _objectsOnBelt.Count; i++)
             {
                 _objectsOnBelt[i].Translate(transform.forward * BeltSpeed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            if (_beltSound.isPlaying)
+            {
+                _beltSound.Stop();
             }
         }
     }
