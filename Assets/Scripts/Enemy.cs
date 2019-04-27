@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private float _checkDestinationTimer = 0.0f;
     private float _coolDownTimer = 0.0f;
     private int _currentWaypoint = 0;
+    private float _health = 8;
     public Transform ShootPoint;
 
     void Awake()
@@ -116,6 +117,15 @@ public class Enemy : MonoBehaviour
                     _chasingPlayer = true;
                 }
             }
+        }
+    }
+
+    public void ApplyDamage(float amount)
+    {
+        _health -= amount;
+        if (_health < 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

@@ -15,6 +15,7 @@ public class PlayerBattery : MonoBehaviour
     public float MoveSpeed = 10f;
     public GameObject GameOverText;
     public GameObject ProjectilePrefab;
+    public Camera Cam;
 
     void Start()
     {
@@ -47,9 +48,18 @@ public class PlayerBattery : MonoBehaviour
     {
         _canShoot = false;
         _coolDownTimer = 0.0f;
-        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position, Quaternion.identity);
-        p.transform.LookAt(pos + (Vector3.up * 2));
+        Vector3 point = Vector3.zero;
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+
+                if (Physics.Raycast(Cam.ScreenPointToRay(Input.mousePosition), out hit, 100))
+                {
+                    point = hit.point;
+                }
+            }
+        GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position + (Vector3.up * 2) + ((point - transform.position).normalized * 2), Quaternion.identity);
+        p.transform.LookAt(point + (Vector3.up * 2));
     }
 
     void FixedUpdate()
