@@ -26,7 +26,7 @@ public class Recharger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ChargeAble")
+        if (other.tag == "ChargeAble" || other.tag == "Player")
         {
             _charging = true;
             if (Battery_1 == null)
@@ -43,7 +43,7 @@ public class Recharger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ChargeAble")
+        if (other.tag == "ChargeAble" || other.tag == "Player")
         {
             _charging = false;
             if (Battery_1 == other.GetComponent<BatteryPower>())

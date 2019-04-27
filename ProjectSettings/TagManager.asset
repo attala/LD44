@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ChargeAble
+  - Enemy
+  - EnemyProjectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

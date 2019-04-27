@@ -17,7 +17,7 @@ public class BeltMovement : MonoBehaviour
     private void Start()
     {
         renderer = GetComponent<Renderer>();
-        _beltSound = transform.root.GetComponent<AudioSource>();
+        _beltSound = transform.parent.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,21 +30,24 @@ public class BeltMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        int toremove = -1;
-        for (int i = 0; i < _objectsOnBelt.Count; i++)
+        if (other.tag == "ChargeAble")
         {
-            if (other.transform == _objectsOnBelt[i])
+            int toremove = -1;
+            for (int i = 0; i < _objectsOnBelt.Count; i++)
             {
-                toremove = i;
+                if (other.transform == _objectsOnBelt[i])
+                {
+                    toremove = i;
+                }
             }
-        }
-        if (toremove != -1)
-        {
-            _objectsOnBelt.RemoveAt(toremove);
-        }
-        else
-        {
-            Debug.LogError("Trying to remove an object from the conveyor belt that doesn't exist!");
+            if (toremove != -1)
+            {
+                _objectsOnBelt.RemoveAt(toremove);
+            }
+            else
+            {
+                Debug.LogError("Trying to remove an object from the conveyor belt that doesn't exist!");
+            }
         }
     }
 
