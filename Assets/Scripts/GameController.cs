@@ -7,7 +7,11 @@ public class GameController : MonoBehaviour
 {
     private void Start()
     {
-        Time.timeScale = 1.0f;
+        Tutorial tut = GetComponent<Tutorial>();
+        if (tut == null)
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void GoToMenu()
