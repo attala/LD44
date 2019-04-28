@@ -9512,7 +9512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 160327976}
         m_MethodName: ChangeText
         m_Mode: 1
         m_Arguments:
@@ -10044,11 +10044,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 1127747552715306243, guid: 690fda71de64dd44dbf53451d69b793f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5093389200538309275, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10103,6 +10098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127747552715306243, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 750319731928108474, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
@@ -11296,11 +11296,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 1127747552715306243, guid: 690fda71de64dd44dbf53451d69b793f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5093389200538309275, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11365,6 +11360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127747552715306243, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 750319731928108474, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
@@ -11471,21 +11471,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c7e4270414ddbcc48aca6785b043839f, type: 3}
-    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
-        type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 38.575203
-      objectReference: {fileID: 0}
     - target: {fileID: 4376030576497315515, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
       propertyPath: ChargingRate
@@ -11506,6 +11491,21 @@ PrefabInstance:
       propertyPath: SparksAndSound
       value: 
       objectReference: {fileID: 1296191328}
+    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c7e4270414ddbcc48aca6785b043839f, type: 3}
+    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582731426228540875, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 38.575203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690fda71de64dd44dbf53451d69b793f, type: 3}
 --- !u!1001 &2087638472

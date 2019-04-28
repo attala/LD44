@@ -77,11 +77,11 @@ public class Recharger : MonoBehaviour
         {
             if (Battery2IsDraining)
             {
-                Battery_2.transform.position = Vector3.Lerp(Battery_2.transform.position, transform.position, Time.deltaTime);
+                Battery_2.transform.position = Vector3.Lerp(Battery_2.transform.position, transform.position, 0.5f * Time.deltaTime);
             }
             else
             {
-                Battery_1.transform.position = Vector3.Lerp(Battery_1.transform.position, transform.position, Time.deltaTime);
+                Battery_1.transform.position = Vector3.Lerp(Battery_1.transform.position, transform.position, 0.5f * Time.deltaTime);
             }
             
         }

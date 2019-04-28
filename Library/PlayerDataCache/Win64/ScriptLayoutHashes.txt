@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/attal/Desktop/LD44.exe
+C:/Users/attal/Desktop/Battery Life.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Level_1.unity
@@ -131,7 +131,7 @@ dd7520b7d4e690e8c593273e7b9fbe80 Assembly-CSharp.dll:TMPro.Examples.TMP_TextEven
 47930f3b40e24ef5b3b5e3d9ada7097a Assembly-CSharp.dll:TMPro.Examples.Benchmark01
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ConveyorBelt
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
-26666875edeb8ce8bf85baaa0ee0c753 Assembly-CSharp.dll:.PlayerBattery
+2a2a479dfaf070ac5849ec09bcd23512 Assembly-CSharp.dll:.PlayerBattery
 3375c3d749f8f4cad889721b431bdc27 Assembly-CSharp.dll:TMPro.Examples.CameraController
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexJitter
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
@@ -167,7 +167,7 @@ e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_A
 3791eedfe2962e32cdc7eedce154f400 Assembly-CSharp.dll:.Recharger
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-23dcf910c8580f9e6e27c44d5840cc6b Assembly-CSharp.dll:.Enemy
+4e520418dcd02ce790e7c2c118d8b1cf Assembly-CSharp.dll:.Enemy
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 259d013faac28e8ba0aa2a7542273735 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
