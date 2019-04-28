@@ -769,11 +769,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conveyor Belt (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3078246853217320642, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 3078246853217320646, guid: d72ea96392d06c04b846d23f5f9a91b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -828,46 +823,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246853217320646, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.700002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246853217320646, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 46.6084
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246852993620384, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246852993620384, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0533
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246852993620415, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5970728877674097975, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5970728877674097975, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3078246852993620386, guid: d72ea96392d06c04b846d23f5f9a91b6,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72ea96392d06c04b846d23f5f9a91b6, type: 3}
