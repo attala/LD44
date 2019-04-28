@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148641299827272865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.51}
+  m_LocalPosition: {x: 0, y: 0, z: 2.091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1819512274269336966}
@@ -250,6 +250,10 @@ MonoBehaviour:
   SearchRadius: 20
   CoolDownPeriod: 2
   ProjectilePrefab: {fileID: 1646753330697383741, guid: 9ab323bd2c3ae0f4a8b4b30f8e15bdb1,
+    type: 3}
+  DeadObjectPrefab: {fileID: 6304702559595327290, guid: f7faf23dacc7bb94d8caa50ea508ee5c,
+    type: 3}
+  DeathExplosionPrefab: {fileID: 7755722921998802813, guid: 76a5553aa42256b4fb0b559cb19151e9,
     type: 3}
   ShootPoint: {fileID: 8211664157291940118}
   AttackSound: {fileID: 8300000, guid: 25bd021e9b5d2cb4c877f539f2ae3ab7, type: 3}

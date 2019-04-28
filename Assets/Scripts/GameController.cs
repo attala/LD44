@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private void Awake()
-    {
-        //DontDestroyOnLoad(this.gameObject);
-    }
-
     public void GoToMenu()
     {
         SceneManager.LoadScene("Menu");

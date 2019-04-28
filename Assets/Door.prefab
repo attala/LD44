@@ -913,7 +913,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.96, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &884026495375957532
 MonoBehaviour:
@@ -930,7 +930,7 @@ MonoBehaviour:
   lamp: {fileID: 0}
   MoveSpeed: 1
   GreenLightSound: {fileID: 8300000, guid: f662a975cda9c194e8d0c7c2af159ec5, type: 3}
-  OpenHeight: 10
+  OpenHeight: 5
 --- !u!82 &8930408016323933488
 AudioSource:
   m_ObjectHideFlags: 0

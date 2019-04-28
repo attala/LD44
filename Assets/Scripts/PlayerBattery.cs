@@ -14,6 +14,9 @@ public class PlayerBattery : MonoBehaviour
     private AudioSource _audioSource;
     private AudioClip _shootSound;
 
+    public bool FlipHorizontalAndVertical = false;
+    public bool FlipHorizontal = false;
+    public bool FlipVertical = false;
     public float MoveSpeed = 10f;
     public GameObject GameOverText;
     public GameObject ProjectilePrefab;
@@ -70,7 +73,7 @@ public class PlayerBattery : MonoBehaviour
                 }
             }
             GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position + (Vector3.up * 2) + ((point - transform.position).normalized * 2), Quaternion.identity);
-            p.transform.LookAt(point + (Vector3.up * 2));
+            p.transform.LookAt(new Vector3(point.x, transform.position.y + 2, point.z));
         }
         else
         {
@@ -81,7 +84,27 @@ public class PlayerBattery : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(tf.position + new Vector3(-Input.GetAxis("Vertical") * MoveSpeed * Time.deltaTime, 0, Input.GetAxis("Horizontal") * MoveSpeed * Time.deltaTime));
+        float inputVertical = -Input.GetAxis("Vertical");
+        float inputHorizontal = Input.GetAxis("Horizontal");
+
+        if (FlipHorizontal)
+        {
+            inputHorizontal = -Input.GetAxis("Horizontal");
+        }
+        if (FlipVertical)
+        {
+            inputVertical = Input.GetAxis("Vertical");
+        }
+
+        if (FlipHorizontalAndVertical)
+        {
+            rb.MovePosition(tf.position + new Vector3(inputHorizontal * MoveSpeed * Time.deltaTime, 0, inputVertical * MoveSpeed * Time.deltaTime));
+        }
+        else
+        {
+            rb.MovePosition(tf.position + new Vector3(inputVertical * MoveSpeed * Time.deltaTime, 0, inputHorizontal * MoveSpeed * Time.deltaTime));
+        }
+        
 
         if (bp.CurrentPowerLevel <= 0)
         {

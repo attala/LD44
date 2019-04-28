@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float SearchRadius = 35f;
     public float CoolDownPeriod = 1f;
     public GameObject ProjectilePrefab;
+    public GameObject DeadObjectPrefab;
+    public GameObject DeathExplosionPrefab;
     public Transform ShootPoint;
     public AudioClip AttackSound;
     public AudioSource ShootSound;
@@ -143,6 +145,9 @@ public class Enemy : MonoBehaviour
         _health -= amount;
         if (_health < 0)
         {
+            GameObject deadBody = ATTALA.PoolingManager.PM.SpawnObject(DeadObjectPrefab, transform.position, Quaternion.identity);
+            deadBody.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(10, 0, 0),ForceMode.Impulse);
+            ATTALA.PoolingManager.PM.SpawnParticleSystem(null, DeathExplosionPrefab, transform.position, Quaternion.identity, true);
             gameObject.SetActive(false);
         }
     }
