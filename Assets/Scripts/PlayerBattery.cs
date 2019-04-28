@@ -12,16 +12,19 @@ public class PlayerBattery : MonoBehaviour
     bool _canShoot = false;
     float _coolDownTimer = 0.0f;
     private AudioSource _audioSource;
+    private AudioClip _shootSound;
 
     public float MoveSpeed = 10f;
     public GameObject GameOverText;
     public GameObject ProjectilePrefab;
     public Camera Cam;
     public bool HasWeapon = true;
+    public AudioClip NoAmmoSound;
 
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        _shootSound = _audioSource.clip;
         rb = GetComponent<Rigidbody>();
         tf = GetComponent<Transform>();
         bp = GetComponent<BatteryPower>();
@@ -49,10 +52,14 @@ public class PlayerBattery : MonoBehaviour
 
     private void Shoot()
     {
-        _audioSource.Play();
-        _canShoot = false;
-        _coolDownTimer = 0.0f;
-        Vector3 point = Vector3.zero;
+        if (bp.CurrentPowerLevel > 10)
+        {
+            bp.AdjustPowerLevel(-2f);
+            _audioSource.clip = _shootSound;
+            _audioSource.Play();
+            _canShoot = false;
+            _coolDownTimer = 0.0f;
+            Vector3 point = Vector3.zero;
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
@@ -62,8 +69,14 @@ public class PlayerBattery : MonoBehaviour
                     point = hit.point;
                 }
             }
-        GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position + (Vector3.up * 2) + ((point - transform.position).normalized * 2), Quaternion.identity);
-        p.transform.LookAt(point + (Vector3.up * 2));
+            GameObject p = ATTALA.PoolingManager.PM.SpawnObject(ProjectilePrefab, transform.position + (Vector3.up * 2) + ((point - transform.position).normalized * 2), Quaternion.identity);
+            p.transform.LookAt(point + (Vector3.up * 2));
+        }
+        else
+        {
+            _audioSource.clip = NoAmmoSound;
+            _audioSource.Play();
+        }
     }
 
     void FixedUpdate()

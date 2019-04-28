@@ -113,22 +113,30 @@ public class Enemy : MonoBehaviour
 
     void CheckForTargets()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, SearchRadius);
-        if (hitColliders.Length != 0)
+        float distance = Vector3.Distance(_playerTransform.position, transform.position);
+
+        if(distance < SearchRadius)
         {
-            for (int i = 0; i < hitColliders.Length; i++)
+            Vector3 dir = ((_playerTransform.position + (Vector3.up * 2)) - ShootPoint.position).normalized;
+            Debug.DrawRay(ShootPoint.position, dir * 100, Color.green);
+
+            RaycastHit objectHit;
+            if (Physics.Raycast(ShootPoint.position, dir, out objectHit, 100))
             {
-                if (hitColliders[i].tag == "Player")
+                //do something if hit object ie
+                if (objectHit.transform.tag == "Player")
                 {
                     _audioSource.clip = AttackSound;
-                    agent.SetDestination(hitColliders[i].transform.position);
+                    agent.SetDestination(_playerTransform.position);
                     agent.speed *= 2.2f;
                     _chasingPlayer = true;
-
                 }
             }
         }
     }
+
+        
+    
 
     public void ApplyDamage(float amount)
     {
