@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_AtlasSize: 64
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -853,6 +853,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970728877674097975, guid: d72ea96392d06c04b846d23f5f9a91b6,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970728877674097975, guid: d72ea96392d06c04b846d23f5f9a91b6,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3078246852993620386, guid: d72ea96392d06c04b846d23f5f9a91b6,
         type: 3}
@@ -6922,7 +6932,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5a66fc562b145fc44b370da1a665327d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.349
+  m_Volume: 1
   m_Pitch: 0.27
   Loop: 1
   Mute: 0
@@ -6930,8 +6940,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 9.44
+  MaxDistance: 25.02
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6966,7 +6976,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6981,7 +6991,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7964,6 +7974,31 @@ PrefabInstance:
     - target: {fileID: 6886398824157203423, guid: 96c2b86fc383f714f99afb74f2637bad,
         type: 3}
       propertyPath: StartPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200219509464032269, guid: 96c2b86fc383f714f99afb74f2637bad,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200219509464032269, guid: 96c2b86fc383f714f99afb74f2637bad,
+        type: 3}
+      propertyPath: MinDistance
+      value: 9.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200219509464032269, guid: 96c2b86fc383f714f99afb74f2637bad,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 25.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200219509464032269, guid: 96c2b86fc383f714f99afb74f2637bad,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200219509464032269, guid: 96c2b86fc383f714f99afb74f2637bad,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9410,6 +9445,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435971263320859240, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435971263320859240, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: MinDistance
+      value: 9.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435971263320859240, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 25.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435971263320859240, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435971263320859240, guid: 690fda71de64dd44dbf53451d69b793f,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7902512638037553098, guid: 690fda71de64dd44dbf53451d69b793f,
         type: 3}
@@ -11295,7 +11355,7 @@ PrefabInstance:
     - target: {fileID: 967102924767797740, guid: c4b5ea6e629bcf745b300aa10df6a163,
         type: 3}
       propertyPath: StartPower
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b5ea6e629bcf745b300aa10df6a163, type: 3}
@@ -11411,6 +11471,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2971459826774295701, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971459826774295701, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971459826774295701, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971459826774295701, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971459826774295702, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409583886191904257, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.96
+      objectReference: {fileID: 0}
     - target: {fileID: 2942848897562557108, guid: 4f9e9ba8131d4434fbba5b9bf278190b,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11426,5 +11516,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5704452924800293605, guid: 4f9e9ba8131d4434fbba5b9bf278190b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4f9e9ba8131d4434fbba5b9bf278190b, type: 3}

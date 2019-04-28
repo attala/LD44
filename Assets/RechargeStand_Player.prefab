@@ -4976,7 +4976,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 9
-  MaxDistance: 50
+  MaxDistance: 33.19117
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5144,6 +5144,7 @@ GameObject:
   - component: {fileID: 2971459826774295701}
   - component: {fileID: 2971459826774295702}
   - component: {fileID: 1409583886191904257}
+  - component: {fileID: 5704452924800293605}
   m_Layer: 0
   m_Name: RechargeStand
   m_TagString: Untagged
@@ -5235,8 +5236,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 12.68, z: 2.36}
-  m_Center: {x: -0.89, y: 6.83, z: -1.17}
+  m_Size: {x: 0.36, y: 12.68, z: 2.36}
+  m_Center: {x: -0.93, y: 6.83, z: -1.17}
 --- !u!65 &2971459826774295702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5261,8 +5262,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.95, y: 12.93, z: 0.2}
+  m_Size: {x: 1.87, y: 12.93, z: 0.2}
   m_Center: {x: 0.00000016391286, y: 6.9, z: -2.47}
+--- !u!65 &5704452924800293605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971459826774295696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.33, y: 12.93, z: 1.29}
+  m_Center: {x: -1.79, y: 6.9, z: -1.7}
 --- !u!1 &5685978472276545394
 GameObject:
   m_ObjectHideFlags: 0
