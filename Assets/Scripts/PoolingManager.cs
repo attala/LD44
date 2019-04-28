@@ -12,8 +12,8 @@ namespace ATTALA
 
         void Awake()
         {
-            GameObject.DontDestroyOnLoad(gameObject);
-            if(PM == null)
+            //GameObject.DontDestroyOnLoad(gameObject);
+            if (PM == null)
                 PM = this;
         }
 
