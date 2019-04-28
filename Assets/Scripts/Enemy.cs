@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public float SearchRadius = 35f;
     public float CoolDownPeriod = 1f;
     public GameObject ProjectilePrefab;
+    public Transform ShootPoint;
+    public AudioClip AttackSound;
+    public AudioSource ShootSound;
 
     private List<Vector3> _waypoints = new List<Vector3>();
     private bool _chasingPlayer;
@@ -21,11 +24,14 @@ public class Enemy : MonoBehaviour
     private float _coolDownTimer = 0.0f;
     private int _currentWaypoint = 0;
     private float _health = 8;
-    public Transform ShootPoint;
+    private AudioSource _audioSource;
+    private AudioClip _moveSound;
+
 
     void Awake()
     {
-
+        _audioSource = GetComponent<AudioSource>();
+        _moveSound = _audioSource.clip;
         _playerTransform = GameObject.Find("PlayerBattery").transform;
         agent = GetComponent<NavMeshAgent>();
         _patrolSpeed = agent.speed;
@@ -67,8 +73,9 @@ public class Enemy : MonoBehaviour
                 Shoot();
             }
 
-            if (distance > 35)
+            if (distance > SearchRadius * 1.4f)
             {
+                _audioSource.clip = _moveSound;
                 agent.speed = _patrolSpeed;
                 _chasingPlayer = false;
                 agent.SetDestination(_waypoints[_currentWaypoint]);
@@ -96,6 +103,7 @@ public class Enemy : MonoBehaviour
 
     private void Shoot()
     {
+        ShootSound.Play();
         _canShoot = false;
         _coolDownTimer = 0.0f;
         //Vector3 dir = (_playerTransform.position - transform.position).normalized;
@@ -112,9 +120,11 @@ public class Enemy : MonoBehaviour
             {
                 if (hitColliders[i].tag == "Player")
                 {
+                    _audioSource.clip = AttackSound;
                     agent.SetDestination(hitColliders[i].transform.position);
                     agent.speed *= 2.2f;
                     _chasingPlayer = true;
+
                 }
             }
         }

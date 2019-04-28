@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
 
     float _lifeTimer = 0.0f;
 
+
     private void OnEnable()
     {
         _lifeTimer = 0.0f;

@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private int _currentLevel;
+    private void Awake()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+    }
 
     public void GoToMenu()
     {
@@ -14,7 +17,16 @@ public class GameController : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        _currentLevel++;
-        SceneManager.LoadScene(_currentLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -10,10 +10,12 @@ public class PowerConsumer : MonoBehaviour
     public UnityEvent Powered;
     public UnityEvent UnPowered;
 
+    private Lamp _lamp;
     bool _poweredTriggered = false, _unPoweredTriggered = false;
 
     private void Start()
     {
+        _lamp = GetComponentInChildren<Lamp>();
         recharger = GetComponent<Recharger>();
     }
 
@@ -24,6 +26,7 @@ public class PowerConsumer : MonoBehaviour
             recharger.Battery_2.GetComponent<BatteryPower>().AdjustPowerLevel(-PowerConsumptionRate * Time.deltaTime);
             if (!_poweredTriggered)
             {
+                _lamp.Switch(true);
                 _poweredTriggered = true;
                 _unPoweredTriggered = false;
                 Powered.Invoke();
@@ -34,6 +37,7 @@ public class PowerConsumer : MonoBehaviour
         {
             if (!_unPoweredTriggered)
             {
+                _lamp.Switch(false);
                 _poweredTriggered = false;
                 _unPoweredTriggered = true;
                 UnPowered.Invoke();

@@ -11,14 +11,17 @@ public class PlayerBattery : MonoBehaviour
     Rigidbody rb;
     bool _canShoot = false;
     float _coolDownTimer = 0.0f;
+    private AudioSource _audioSource;
 
     public float MoveSpeed = 10f;
     public GameObject GameOverText;
     public GameObject ProjectilePrefab;
     public Camera Cam;
+    public bool HasWeapon = true;
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         tf = GetComponent<Transform>();
         bp = GetComponent<BatteryPower>();
@@ -37,7 +40,7 @@ public class PlayerBattery : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            if (_canShoot)
+            if (_canShoot && HasWeapon)
             {
                 Shoot();
             }
@@ -46,6 +49,7 @@ public class PlayerBattery : MonoBehaviour
 
     private void Shoot()
     {
+        _audioSource.Play();
         _canShoot = false;
         _coolDownTimer = 0.0f;
         Vector3 point = Vector3.zero;
